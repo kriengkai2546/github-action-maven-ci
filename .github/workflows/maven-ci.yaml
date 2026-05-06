@@ -33,6 +33,11 @@ jobs:
           java-version: '17'
       - name: building jarfile
         run: mvn clean package
+      - name: upload argifacts
+        uses: actions/upload-artifact
+        with:
+          name: artifact-data
+          path: '**/target/*.jar'
 
     
 
