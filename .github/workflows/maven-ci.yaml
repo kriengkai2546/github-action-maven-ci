@@ -34,7 +34,7 @@ jobs:
       - name: building jarfile
         run: mvn clean package
       - name: upload argifacts
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v6
         with:
           name: artifact-data
           path: '**/target/*.jar'
