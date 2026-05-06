@@ -38,6 +38,18 @@ jobs:
         with:
           name: artifact-data
           path: '**/target/*.jar'
+  
+  deploy:
+    needs: build
+    name: taking artifacts from maven
+    runs-on: ubuntu-latest
+    steps:
+      - name: get artifacts data from build jobs
+        uses: actions/download-artifact@v7
+        with:
+          name: artifact-data
+      - name: list my artifact
+        run: ls
 
     
 
